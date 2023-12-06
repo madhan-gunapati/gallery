@@ -1,10 +1,10 @@
 const ImageCard = (props)=>{
    
-const {details} = props
+const {details , sendId , selectedImage} = props
 
-const {thumbnailUrl , thumbnailAltText} = details
-return <li >
-    <img className="bg-dark" src={thumbnailUrl} alt={thumbnailAltText} />
+const {thumbnailUrl , thumbnailAltText , id } = details
+return <li className={` m-8 w-auto ${selectedImage === id ? null :'opacity-50'}` }>
+    <img   src={thumbnailUrl} alt={thumbnailAltText} onClick={()=>{sendId(id)}} />
 
 </li>
 }
